@@ -128,3 +128,12 @@ Os ficheiros foram preparados para instalação. A publicação real, o SQL/RLS 
 - https://supabase.com/docs/reference/javascript/auth-getuser
 - https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/
 - https://www.nhs.uk/live-well/exercise/how-to-improve-strength-flexibility/
+
+## Alternativa: Gemini com plano gratuito
+
+1. Crie uma chave num projeto Free Tier em https://aistudio.google.com/apikey, sem ativar faturação.
+2. Em Supabase → Edge Functions → Secrets, adicione GEMINI_API_KEY e GEMINI_MODEL=gemini-2.5-flash.
+3. Atualize o código de rgfit-analyze com supabase/functions/rgfit-analyze/index.ts e publique mantendo Verify JWT desativado.
+4. A chave Gemini tem prioridade; não existe mudança automática para a OpenAI quando acaba a quota.
+5. As quotas dependem da conta e do modelo. Fotos reais ainda precisam de validação com a sua chave. Os testes usam respostas simuladas.
+6. A foto passa a ser processada pela Google segundo os termos da Gemini API.
