@@ -1,0 +1,4 @@
+[functions.rgfit-analyze]
+# O próprio handler valida o token com /auth/v1/user antes de consumir quota.
+# Compatível com chaves publicáveis e JWTs de sessão.
+verify_jwt = false
